@@ -1,24 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Toolbar</mat-toolbar>
     <mat-nav-list class="toolbar__list">
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
-      <button mat-stroked-button color="primary" class="toolbar__btn"><mat-icon>home</mat-icon></button>
+      <button *ngFor="let tool of availableTools;" mat-stroked-button color="primary" class="toolbar__btn">
+        <span class="material-icons">{{tool}}</span>
+      </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -31,8 +20,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>document-editor</span>
+      <span>PDF Editor</span>
     </mat-toolbar>
-    <input type="file">
+    <div class="work-space">
+      <input class="work-space__file-picker" type="file">
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

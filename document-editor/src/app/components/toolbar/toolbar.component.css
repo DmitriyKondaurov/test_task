@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  /*width: 200px;*/
 }
 
 .sidenav .mat-toolbar {
@@ -17,7 +17,9 @@
 }
 
 .toolbar__btn {
-
+  margin: 5px;
+  padding: 0;
+  min-width: 50px;
 }
 
 .toolbar__list {
@@ -25,4 +27,18 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+
+.work-space {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.work-space__file-picker {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

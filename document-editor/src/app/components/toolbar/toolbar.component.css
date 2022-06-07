@@ -1,7 +1,8 @@
 .sidenav-container {
   height: 100%;
-  margin-left: 100px;
 }
+
+
 
 .sidenav .mat-toolbar {
   background: inherit;
@@ -39,3 +40,10 @@
   left: 50%;
   transform: translate(-50%, -100%);
 }
+
+@media only screen and (min-width: 600px) {
+  .sidenav-content {
+    margin-left: 100px;
+  }
+}
+

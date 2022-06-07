@@ -12,9 +12,21 @@ export class HeaderComponent implements OnInit {
    'Website',
    'About'
  ]
+
+  status: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    window.addEventListener('resize', (ev) => {
+      const pos: Window | null | EventTarget = ev.currentTarget;
+      if (pos && pos instanceof Window && pos.screen.width < 600) {
+        this.status = false
+      }
+    });
   }
 
+  toggleMenu() {
+    this.status = !this.status;
+  }
 }

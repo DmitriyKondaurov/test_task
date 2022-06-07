@@ -7,8 +7,66 @@
 
 .header__logo {
   margin: 0;
+  flex-grow: 1;
 }
 
 .header__logo a {
   text-decoration: none;
+}
+
+.header__nav-list {
+  display: none;
+}
+
+.header__nav-list--active {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  z-index: 2;
+  flex-wrap: wrap;
+  flex-flow: column;
+  background-color: #fff;
+}
+
+.header__nav-item {
+  text-align: center;
+}
+
+.header__nav-toggle-btn {
+  margin-right: 10px;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .header__nav-toggle-btn {
+    display: none;
+  }
+
+  .header__logo {
+    padding-left: 100px;
+  }
+
+  .header__nav-list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .header__nav-list--active {
+    position: initial;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    z-index: 0;
+    flex-wrap: wrap;
+    flex-flow: row;
+    background-color: #fff;
+  }
 }
